@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1162352751 source:c:\users\rafah\desktop\projeto\arvore-tad\gunbound\player.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	"Player.h"
+
+1162354839 source:c:\users\rafah\desktop\projeto\arvore-tad\gunbound\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Player.h"
+
+1162354518 c:\users\rafah\desktop\projeto\arvore-tad\gunbound\player.h
+
