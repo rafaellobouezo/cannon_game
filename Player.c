@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <math.h>
 #include "Player.h"
+#include <graphics.h>
+
 #define PI 3.1415926535897932384626433832795
 
 
@@ -72,10 +74,12 @@ void hub(Player* jogador,float *alcanceTiro){
     printf("\n--->> POSICAO DO JOGADOR: %i <- %i -> %i",jogador->limiteEsq,jogador->posicao,jogador->limiteDir);
     printf("\n--->> ULTIMO ANGULO: %i",jogador->lastAngulo);
     printf("\n--->> ULTIMA VELOCIDADE: %.2f",jogador->lastVeloc);
-    printf("\n[ CONTINUAR ? PRESSIONE ENTER ] ");
+    printf("\n[ VER ANIMAÇÃO - PRESSIONE ENTER ] ");
     fflush(stdin);
     getchar();
     fflush(stdin);
+
+    graphic();
 }
 int verifDeAcerto(Player* vitima,Player* atirador,float *posicaoTiro){
     float tiro;
@@ -96,4 +100,18 @@ int verifDeAcerto(Player* vitima,Player* atirador,float *posicaoTiro){
         tiro = *posicaoTiro + atirador->posicao;
         return ( tiro  >= vitima->limiteEsq)&& ( tiro<= vitima->limiteDir) ;
     }
+}
+int graphic(){
+    initgraph(&gd, &gm, "C:\\TC\\BGI");
+    int i;
+    for(i = 0; i < 300; i++)
+            {
+                 usleep(2000);
+                  setcolor(rand() % 10);
+                  circle(rand() % 640, rand() % 480, rand() % 25);
+                  delay(1);
+            }
+
+   getch();
+   closegraph();
 }
