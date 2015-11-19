@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	</head>
+	<style>
+	<!--
+	
+	section {
+		width: 90%;
+		margin: 0 5%;
+	}
+	
+	.formFormat input[class=half] {
+		width: 42%;
+		margin: 1% 0 1% 5%;
+		float: left;
+	}
+	
+	.formFormat input[class=full] {
+		width: 90%;
+		margin: 1% 5%;
+	}
+	
+	.radioItem {
+		width: 40%;
+		margin: 2.5%;
+		padding: 2.5%;
+		float: left;
+		background: #DDD;
+	}
+	
+	.checkItem {
+		width: 40%;
+		margin: 2.5%;
+		padding: 2.5%;
+		float: left;
+	}
+	
+	.formFormat label {
+		width: 100%;
+		text-align: center;
+		float: left;
+	}
+	
+	-->
+	</style>
+	<body>
+	</body>
+		<section class="formSection">
+			<form class="formFormat">
+				<input type="text" name="nome"  class="full" placeholder="Nome" /> 
+				<input type="text" name="sobrenome" class="full" placeholder="Sobrenome" /> 
+				<input type="text" name="nasc" class="full" placeholder="Data de Nascimento" /> 
+				<input type="text" name="cpf" class="full" placeholder="CPF" /> 
+				<input type="text" name="email" class="full" placeholder="E-mail" /> 
+				<input type="password" name="senha" class="full" placeholder="Senha" /> 
+				<br /><label for="conhecimento">Nível de contato com informática</label>				
+					<div class="radioItem"> <input type="radio" name="conhecimento" value="0">Nenhum </div>
+					<div class="radioItem"> <input type="radio" name="conhecimento" value="1">Básico </div>
+					<div class="radioItem"> <input type="radio" name="conhecimento" value="2">Intermediário </div>
+					<div class="radioItem"> <input type="radio" name="conhecimento" value="3">Avançado </div>
+				<br />
+				<label for="interesse">Áreas de Interesse</label>
+					<div class="checkItem"> <input type="checkbox" name="interesse" value="0">Matemática  </div>
+					<div class="checkItem"> <input type="checkbox" name="interesse" value="1">Programação  </div>
+					<div class="checkItem"> <input type="checkbox" name="interesse" value="2">Física  </div>
+					<div class="checkItem"> <input type="checkbox" name="interesse" value="3">Química  </div>
+					<div class="checkItem"> <input type="checkbox" name="interesse" value="4">Biologia </div>
+					<div class="checkItem"> <input type="checkbox" name="interesse" value="5">Português  </div>
+				<br />
+			</form>
+		</section>
+</html>
