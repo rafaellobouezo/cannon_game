@@ -7,10 +7,19 @@
 	</head>
 	<style>
 	<!--
+	body {
+		margin: 0 auto;
+		font-family: Arial;
+		color: #444;
+	}
 	
 	section {
 		width: 90%;
 		margin: 0 5%;
+	}
+	
+	.formFormat input {
+		font-size: 95.5%;
 	}
 	
 	.formFormat input[class=half] {
@@ -45,6 +54,13 @@
 		float: left;
 	}
 	
+	.formFormat input[type=button] {
+		width: 88%;
+		margin: 1% 5%;
+		padding: 1%;
+		float: left;
+	}
+	
 	-->
 	</style>
 	<body>
@@ -71,6 +87,8 @@
 					<div class="checkItem"> <input type="checkbox" name="interesse" value="4">Biologia </div>
 					<div class="checkItem"> <input type="checkbox" name="interesse" value="5">Português  </div>
 				<br />
+				<input type="button" value="Executar Ação">
+				<input type="button" value="Cancelar Ação">
 			</form>
 		</section>
 </html>
