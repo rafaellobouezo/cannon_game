@@ -58,6 +58,10 @@ section {
 	float: left;
 }
 
+.displaySectionImg {
+	display: none;
+}
+        
 .ementaItem {
 	margin: 1% 2% 1% 2%;
 	width: 100%;
@@ -111,7 +115,7 @@ section {
 		width: 90%;
 		background: #EEE;
 		float: left;
-		height: 200px;
+		--height: 200px;
 	}
 /*	
 .displaySection h2 {
@@ -122,8 +126,17 @@ section {
 	
 }*/
 
+.displaySectionImg {
+    display: inline;
+    width: 18%;
+    float: left;
+    margin: 1% 0 1% 12%;
+    overflow: hidden;
+}
+        
 .displaySection img {
-	--display: none;
+	--display: inline;
+    width: 125%;
 }
 
 .infoBox {
@@ -178,7 +191,7 @@ section {
 			<ul>
 		</header>
 		<section class="displaySection">
-			<img />
+			<div class="displaySectionImg"><img src="img/rollercoaster.jpg"/></div>
 			<div class="infoBox">
 				<h2>Cálculo Diferencial e Integral</h2>
 				<p>Texto curto sobre o curso.</p>
