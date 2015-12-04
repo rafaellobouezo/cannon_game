@@ -39,6 +39,11 @@ section {
 	
 }
 
+.classSection video {
+		width: 80%;
+		margin: 2% 10%;
+	}
+	
 .classSection h2 {
 	text-align: center;
 	margin: 0;
@@ -114,20 +119,21 @@ section {
 	
 	.classSection {
 		--z-index: 0;
-		float: right;
-		width:70%;
+		--float: right;
+		width:80%;
+		margin: 1% 10%;
 		overflow-y: auto;
 	}
 	
 	.classSection video {
-		width: 80%;
-		margin: 2% 10%;
+		width: 70%;
+		margin: 2% 15%;
 	}
 	
 	.exerciseSection {
 		--z-index: 1;
 		float: left;
-		width: 30%;
+		width: 100%;
 		margin:0;
 		background: #535353;
 		color: #FFF;
@@ -137,6 +143,11 @@ section {
 	.exerciseSection h2 {
 		background: none;
 		color: #FCE4BA;
+	}
+	
+	.exerciseItem {
+		width: 40%;
+		float: left;
 	}
 	
 	.exerciseItem h2 {
@@ -149,6 +160,22 @@ section {
 	
 	.exerciseSection ol li {
 		background: none;
+	}
+	
+	.exerciseSection input[type=submit] {
+		width: 15%;
+		margin: 1% 10%;
+		padding: 0.5%;
+		font-size: 100%;
+		float: left;
+		background: #FCE4BA;
+		color: #666;
+		border: none;
+	}
+	
+	.separador {
+		float: left;
+		width: 100%;
 	}
 }
 		-->
@@ -173,16 +200,43 @@ section {
 		</section>
 		<section class="exerciseSection">
 			<h2>Exercícios</h2>
-			<article class="exerciseItem">
-				<h2><b>Ex 1:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h2>
-				<ol>
-					<li>Lorem</li>
-					<li>Ipsum</li>
-					<li>Dolor</li>
-					<li>Sit</li>
-					<li>Amet</li>
-				</ol>
-			</article>
+			<form>
+				<div class="separador">
+				<article class="exerciseItem">
+					<h2><b>Ex 1:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h2>
+					<ol>
+						<li><input type="radio" name="q1" value="0" />Lorem</li>
+						<li><input type="radio" name="q1" value="1" />Ipsum</li>
+						<li><input type="radio" name="q1" value="2" />Dolor</li>
+						<li><input type="radio" name="q1" value="3" />Sit</li>
+						<li><input type="radio" name="q1" value="5" />Amet</li>
+					</ol>
+				</article>
+				<article class="exerciseItem">
+					<h2><b>Ex 2:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h2>
+					<ol>
+						<li><input type="radio" name="q2" value="0" />Lorem</li>
+						<li><input type="radio" name="q2" value="1" />Ipsum</li>
+						<li><input type="radio" name="q2" value="2" />Dolor</li>
+						<li><input type="radio" name="q2" value="3" />Sit</li>
+						<li><input type="radio" name="q2" value="5" />Amet</li>
+					</ol>
+				</article>
+				</div>
+				<div class="separador">
+				<article class="exerciseItem">
+					<h2><b>Ex 3:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h2>
+					<ol>
+						<li><input type="radio" name="q3" value="0" />Lorem</li>
+						<li><input type="radio" name="q3" value="1" />Ipsum</li>
+						<li><input type="radio" name="q3" value="2" />Dolor</li>
+						<li><input type="radio" name="q3" value="3" />Sit</li>
+						<li><input type="radio" name="q3" value="5" />Amet</li>
+					</ol>
+				</article>
+				</div>
+				<input type="submit" value="Terminei" />
+			</form>
 		</section>
 	</body>
 </html>
