@@ -1,0 +1,242 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<style>
+		<!--
+					body {
+	margin: 0 auto;
+	font-family: Arial;
+	color: #444;
+}
+
+#mainHeader {
+	width: 90%;
+	--padding: 5%;
+}			
+			#mainHeader ul {
+				list-style: none;
+				text-align: center;
+				margin: 0 auto;
+				
+			}
+			
+			#mainHeader ul li {
+				list-style: none;
+				text-decoration: none;
+				background: #FFC66F;
+				padding: 1%;
+				margin: 2%;
+				color: #00004A;
+				font-weight: bold;
+			}
+			
+section {
+	width: 100%;
+	--margin: 0 5%;
+	
+}
+
+.classSection video {
+		width: 80%;
+		margin: 2% 10%;
+	}
+	
+.classSection h2 {
+	text-align: center;
+	margin: 0;
+	padding: 1%;
+}
+
+.classSection p {
+	text-align: justify;
+	width: 90%;
+	margin:0 5%;
+}
+
+.exerciseSection h2 {
+	background: #FCE4BA;
+	padding: 1%;
+}
+
+.exerciseItem {
+	float: left;
+	width:90%;
+	margin: 0 5%;
+}
+
+.exerciseItem h2 {
+	background: none;
+	padding: none;
+}
+
+.exerciseItem ol {
+	list-style-type:lower-alpha;
+}
+
+.exerciseItem ol li {
+	font-size: 110%;
+	font-weight: bold;
+	padding: 1%;
+	margin: 1% 0 1% -1%;
+	background: #EEE;
+}
+
+.infoBox {
+	background: #EEE;
+	width: 92%;
+	margin: 1% 2.5%;
+	padding: 0.5% 1.5%;
+	float: left;
+}
+
+@media screen and (min-width: 600px) {
+	#mainHeader {
+		width: 100%;
+		background: #FFC66F;
+		float: left;
+	}
+	
+	#mainHeader ul {
+		--margin: 0;	
+		float: right;
+		width: 40%;
+		display: block;
+		--background: #FFC66F;
+	}
+			
+	#mainHeader ul li {
+		list-style: none;
+		text-decoration: none;
+		padding: 2%;
+		margin: 1%;
+		--color: #00004A;
+		--font-weight: bold;
+		float: left;
+	}
+	
+	.classSection {
+		--z-index: 0;
+		--float: right;
+		width:80%;
+		margin: 1% 10%;
+		overflow-y: auto;
+	}
+	
+	.classSection video {
+		width: 70%;
+		margin: 2% 15%;
+	}
+	
+	.exerciseSection {
+		--z-index: 1;
+		float: left;
+		width: 100%;
+		margin:0;
+		background: #535353;
+		color: #FFF;
+		overflow-y: auto;
+	}
+	
+	.exerciseSection h2 {
+		background: none;
+		color: #FCE4BA;
+	}
+	
+	.exerciseItem {
+		width: 40%;
+		float: left;
+	}
+	
+	.exerciseItem h2 {
+		color: #FFF;
+	}
+	
+	.exerciseSection ol {
+		margin-left: -3%;
+	}
+	
+	.exerciseSection ol li {
+		background: none;
+	}
+	
+	.exerciseSection input[type=submit] {
+		width: 15%;
+		margin: 1% 10%;
+		padding: 0.5%;
+		font-size: 100%;
+		float: left;
+		background: #FCE4BA;
+		color: #666;
+		border: none;
+	}
+	
+	.separador {
+		float: left;
+		width: 100%;
+	}
+}
+		-->
+	</style>
+	</head>
+	<body>
+		<header id="mainHeader">
+			<ul>
+				<li>home</li>
+				<li>aulas</li>
+				<li>exercícios</li>
+				<li>estatísticas</li>
+				<li>sair</li>
+			<ul>
+		</header>
+		<section class="classSection">
+			<video src="vid/aulaexemplo.mp4"></video>
+			<article class="teachingClass">
+				<h2>Aula 3 - Derivada</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</article>
+		</section>
+		<section class="exerciseSection">
+			<h2>Exercícios</h2>
+			<form>
+				<div class="separador">
+				<article class="exerciseItem">
+					<h2><b>Ex 1:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h2>
+					<ol>
+						<li><input type="radio" name="q1" value="0" />Lorem</li>
+						<li><input type="radio" name="q1" value="1" />Ipsum</li>
+						<li><input type="radio" name="q1" value="2" />Dolor</li>
+						<li><input type="radio" name="q1" value="3" />Sit</li>
+						<li><input type="radio" name="q1" value="5" />Amet</li>
+					</ol>
+				</article>
+				<article class="exerciseItem">
+					<h2><b>Ex 2:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h2>
+					<ol>
+						<li><input type="radio" name="q2" value="0" />Lorem</li>
+						<li><input type="radio" name="q2" value="1" />Ipsum</li>
+						<li><input type="radio" name="q2" value="2" />Dolor</li>
+						<li><input type="radio" name="q2" value="3" />Sit</li>
+						<li><input type="radio" name="q2" value="5" />Amet</li>
+					</ol>
+				</article>
+				</div>
+				<div class="separador">
+				<article class="exerciseItem">
+					<h2><b>Ex 3:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h2>
+					<ol>
+						<li><input type="radio" name="q3" value="0" />Lorem</li>
+						<li><input type="radio" name="q3" value="1" />Ipsum</li>
+						<li><input type="radio" name="q3" value="2" />Dolor</li>
+						<li><input type="radio" name="q3" value="3" />Sit</li>
+						<li><input type="radio" name="q3" value="5" />Amet</li>
+					</ol>
+				</article>
+				</div>
+				<input type="submit" value="Terminei" />
+			</form>
+		</section>
+	</body>
+</html>

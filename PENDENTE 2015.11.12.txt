@@ -1,0 +1,11 @@
+Home (foco nos cursos)
+Pag texto (PAG + CSS)
+Pag formulário inscrição (PAG + CSS)
+Implementação imagens
+Implementação vídeos
+
+Aulas -> modelo 2 : exercícios embaixo das aulas (botão switch)
+
+Contato -> div "por cima" (z-index) com informações contato ao invés de página dedicada (inicialmente)
+
+Implementar espaço para logo
