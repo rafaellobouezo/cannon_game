@@ -9,7 +9,7 @@
     DATA: 10/11/2015
 
     ALUNOS :    RAFAEL ANDERSON LOBO DA SILVA, UEZO: 1423331065
-                CARLOS ALBERTO....? , UEZO:??
+                CARLOS ALBERTO COSTA DE OLIVEIRA JÚNIOR, UEZO: 1423331068
 
             EQUAÇÃO QUE REGE ESTE PROGRAMA:
 
@@ -35,7 +35,6 @@ void main()
     gerarPosicao(jogador2,1);
 
     while(1){
-
         printf("\n\n\nVEZ DA PARTIDA: JOGADOR 1 \n\n\n \nDigite um angulo: ");
         scanf("%i",&angulo);
         printf("\nDigite a Velocidade Inicial: ");
@@ -67,11 +66,5 @@ void main()
         sleep(3);
         system("cls");
         fflush(stdin);
-
-
-
-
     }
-
-
 }
