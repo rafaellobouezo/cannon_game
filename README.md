@@ -6,6 +6,6 @@
 # Configurações
  Para inserir o graphics.h em seu codeblocks:
   - Clone o projeto em sua máquina
-  - Vá na pasta 'Config Folder'
+  - Procure no google os arquivos de bibliotecas: graphics.h
   - Insira os headers na pasta de header padrão do codeblocks
   - Insira o arquivo .a na pasta 'lib' do codeblocks (Padrão de bibliotecas)
