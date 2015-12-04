@@ -6,23 +6,32 @@
 #include <time.h>
 #include <unistd.h>
 
-
+#define LIM_MAX_MURO 100
 #define PI 3.1415926535897932384626433832795
 
-int graphic(){
+int graphic(short esquerda ,int tamanho_muro, int pos_1, int pos_2, int vel_x, int vel_y){
     int gd = DETECT, gm;
-    int x = 320, y = 240, radius;
+    int t, y, x;
     initgraph(&gd, &gm, "C:\\TC\\BGI");
+
+// CONSTRUÇÃO DO TÉRREO
+    line(0, 50, 635, 50);
+
+// CONSTRUÇÃO DO MURO
+    line(100, 100, 200, 200);
+
+// INSERÇÃO DOS CANHÕES
+
+// TRAJETÓRIA
     int i;
-    for(i = 0; i < 300; i++){
-         usleep(200);
-         setcolor(rand() % 10);
-         circle(rand() % 640, rand() % 480, rand() % 25);
-         delay(1);
+    for(t = 0; t < 300; x++){
+        usleep(200);
+        putpixel(y, x, RED);
     }
 
     getch();
     closegraph();
+    return 0;
 }
 
 void gerarPosicao(Player *jogador,int x){
@@ -96,8 +105,6 @@ void hub(Player* jogador,float *alcanceTiro){
     fflush(stdin);
     getchar();
     fflush(stdin);
-
-    graphic();
 }
 int verifDeAcerto(Player* vitima,Player* atirador,float *posicaoTiro){
     float tiro;
@@ -118,4 +125,7 @@ int verifDeAcerto(Player* vitima,Player* atirador,float *posicaoTiro){
         tiro = *posicaoTiro + atirador->posicao;
         return ( tiro  >= vitima->limiteEsq)&& ( tiro<= vitima->limiteDir) ;
     }
+}
+int definirTamanhoMuro(){
+    return rand() % LIM_MAX_MURO;
 }

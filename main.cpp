@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 #include "Player.h"
 #include <windows.h>
 
@@ -34,6 +35,8 @@ int main()
     gerarPosicao(jogador1,0);
     gerarPosicao(jogador2,1);
 
+    int muro = definirTamanhoMuro();
+
     while(1){
         printf("\n\n\nVEZ DA PARTIDA: JOGADOR 1 \n\n\n \nDigite um angulo: ");
         scanf("%i",&angulo);
@@ -41,6 +44,11 @@ int main()
         scanf("%f",&velocInicial);
         posicao = atirar(angulo,&velocInicial,jogador1);
         hub(jogador1,&posicao);
+
+        // CARLOS MODIFICA플O
+        graphic(1, muro, jogador1->posicao, jogador2->posicao, velocInicial * cos(angulo), velocInicial * sin(angulo));
+        // CARLOS MODIFICA플O
+
         if(verifDeAcerto(jogador2,jogador1,&posicao)){
             printf("\n\n JOGADOR 1 VENCEU !");
             break;
@@ -57,6 +65,10 @@ int main()
         scanf("%f",&velocInicial);
         posicao = atirar(angulo,&velocInicial,jogador2);
         hub(jogador2,&posicao);
+
+        // CARLOS MODIFICA플O
+        graphic(0, muro, jogador1->posicao, jogador2->posicao, velocInicial * cos(angulo), velocInicial * sin(angulo));
+        // CARLOS MODIFICA플O
 
         if(verifDeAcerto(jogador1,jogador2,&posicao)){
             printf("\n\n JOGADOR 2 VENCEU !");
