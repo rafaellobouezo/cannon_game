@@ -9,6 +9,7 @@ typedef struct _player{
 }Player;
 
 
-void gerarPosicao(Player *jogador,int x);
-float atirar(int teta,float *velocInic,Player* atirador);
-int verifDeAcerto(Player* vitima,Player* atirador,float *posicaoTiro);
+void gerarPosicao(Player *,int);
+float atirar(int ,float *,Player*);
+int verifDeAcerto(Player*,Player*,float *);
+void hub(Player*,float *);

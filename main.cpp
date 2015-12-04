@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "Player.h"
-#include <graphics.h>
+#include <windows.h>
 
 /*
     TRABALHO DE FISICA 1
@@ -10,6 +10,7 @@
 
     ALUNOS :    RAFAEL ANDERSON LOBO DA SILVA, UEZO: 1423331065
                 CARLOS ALBERTO COSTA DE OLIVEIRA JÚNIOR, UEZO: 1423331068
+                IGOR GONÇALVEZ SILVA, UEZO: 142333
 
             EQUAÇÃO QUE REGE ESTE PROGRAMA:
 
@@ -23,8 +24,7 @@
             PROFESSOR : MAURÍCIO.
 */
 
-
-void main()
+int main()
 {
     int angulo;
     float velocInicial,posicao;
@@ -46,7 +46,7 @@ void main()
             break;
         }
         printf("\n [JOGADOR 1 ERROU O TIRO !!!]");
-        sleep(3);
+        _sleep(3);
         system("cls");
         fflush(stdin);
 
@@ -63,7 +63,7 @@ void main()
             break;
         }
         printf("\n [JOGADOR 2 ERROU O TIRO !!!]");
-        sleep(3);
+        _sleep(3);
         system("cls");
         fflush(stdin);
     }

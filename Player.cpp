@@ -3,9 +3,27 @@
 #include <math.h>
 #include "Player.h"
 #include <graphics.h>
+#include <time.h>
+#include <unistd.h>
+
 
 #define PI 3.1415926535897932384626433832795
 
+int graphic(){
+    int gd = DETECT, gm;
+    int x = 320, y = 240, radius;
+    initgraph(&gd, &gm, "C:\\TC\\BGI");
+    int i;
+    for(i = 0; i < 300; i++){
+         usleep(200);
+         setcolor(rand() % 10);
+         circle(rand() % 640, rand() % 480, rand() % 25);
+         delay(1);
+    }
+
+    getch();
+    closegraph();
+}
 
 void gerarPosicao(Player *jogador,int x){
 
@@ -100,18 +118,4 @@ int verifDeAcerto(Player* vitima,Player* atirador,float *posicaoTiro){
         tiro = *posicaoTiro + atirador->posicao;
         return ( tiro  >= vitima->limiteEsq)&& ( tiro<= vitima->limiteDir) ;
     }
-}
-int graphic(){
-    initgraph(&gd, &gm, "C:\\TC\\BGI");
-    int i;
-    for(i = 0; i < 300; i++)
-            {
-                 usleep(2000);
-                  setcolor(rand() % 10);
-                  circle(rand() % 640, rand() % 480, rand() % 25);
-                  delay(1);
-            }
-
-   getch();
-   closegraph();
 }
