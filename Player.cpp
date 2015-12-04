@@ -6,7 +6,7 @@
 #include <time.h>
 #include <unistd.h>
 
-#define LIM_MAX_MURO 100
+#define LIM_MAX_MURO 120
 #define PI 3.1415926535897932384626433832795
 
 int graphic(short esquerda ,int tamanho_muro, int pos_1, int pos_2, int vel_x, int vel_y){
@@ -15,10 +15,10 @@ int graphic(short esquerda ,int tamanho_muro, int pos_1, int pos_2, int vel_x, i
     initgraph(&gd, &gm, "C:\\TC\\BGI");
 
 // CONSTRUÇÃO DO TÉRREO
-    line(0, 50, 635, 50);
+    line(0, 400, 640, 400);
 
 // CONSTRUÇÃO DO MURO
-    line(100, 100, 200, 200);
+    line(320, 480 - tamanho_muro, 320, 480);
 
 // INSERÇÃO DOS CANHÕES
 
@@ -127,5 +127,7 @@ int verifDeAcerto(Player* vitima,Player* atirador,float *posicaoTiro){
     }
 }
 int definirTamanhoMuro(){
-    return rand() % LIM_MAX_MURO;
+    int tam = rand() % LIM_MAX_MURO + 180;
+    printf("Tamanho do muro: %d", tam);
+    return tam;
 }
