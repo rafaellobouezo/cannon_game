@@ -14,4 +14,4 @@ float atirar(int ,float *,Player*);
 int verifDeAcerto(Player*,Player*,float *);
 void hub(Player*,float *);
 int definirTamanhoMuro(void);
-int graphic(short, int, int, int, int, int);
+int graphic(short, int, int, int, float, float);

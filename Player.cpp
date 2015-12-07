@@ -9,7 +9,9 @@
 #define LIM_MAX_MURO 120
 #define PI 3.1415926535897932384626433832795
 
-int graphic(short esquerda ,int tamanho_muro, int pos_1, int pos_2, int vel_x, int vel_y){
+float f(int , float);
+
+int graphic(short esquerda ,int tamanho_muro, int pos_1, int pos_2, float vel_x, float vel_y){
     int gd = DETECT, gm;
     initgraph(&gd, &gm, "C:\\TC\\BGI");
 
@@ -42,23 +44,29 @@ int graphic(short esquerda ,int tamanho_muro, int pos_1, int pos_2, int vel_x, i
     line(pos_2 - 20, 380, pos_2 - 20, 388);
 
 // TRAJETÓRIA
-    int t, y, x = 0, i;
-    for(t = 0; t < 9999; t++){
+    int t, y = 400, x = pos_1, g;
+    y = 400 - vel_y;
+    setcolor(RED);
+
+
+    circle(300, 175, 2);
+    for(x=0;x<1000;x++)
+    {
         usleep(100);
-        x = pos_1 + vel_x * t;
-            y = 400 + vel_y * t + 10 * t / 2;
-
-            setcolor(RED);
-            line(x, y, x + 5, y - 5);
-
-            if(x > 401){
-                break;
-            }
+        y=f(x, vel_x);
+        putpixel(x+ pos_1, 400-y,GREEN);
+        putpixel(x+ pos_1, 400+y,GREEN);
     }
 
     getch();
     closegraph();
     return 0;
+}
+
+float f(int x, float v)
+{
+    return 5 * x * x + v * x + 0;
+    //return 2*sqrt(4*x);
 }
 
 void gerarPosicao(Player *jogador,int x){

@@ -17,16 +17,16 @@
 	<stdlib.h>
 	"Player.h"
 
-1449266970 c:\users\lira\desktop\carlos\nova pasta (2)\player.h
+1449525338 c:\users\lira\desktop\carlos\nova pasta (2)\player.h
 
-1449509642 source:c:\users\lira\desktop\carlos\nova pasta (2)\main.cpp
+1449526535 source:c:\users\lira\desktop\carlos\nova pasta (2)\main.cpp
 	<stdio.h>
 	<stdlib.h>
-	<math.h>
 	"Player.h"
 	<windows.h>
+	<math.h>
 
-1449515401 source:c:\users\lira\desktop\carlos\nova pasta (2)\player.cpp
+1449528116 source:c:\users\lira\desktop\carlos\nova pasta (2)\player.cpp
 	<stdio.h>
 	<stdlib.h>
 	<math.h>

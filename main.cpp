@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
 #include "Player.h"
 #include <windows.h>
+#include <math.h>
+#define PI 3.14159265
+
 
 /*
     TRABALHO DE FISICA 1
@@ -34,7 +36,6 @@ int main()
 
     gerarPosicao(jogador1,0);
     gerarPosicao(jogador2,1);
-
     int muro = definirTamanhoMuro();
 
     while(1){
@@ -46,7 +47,7 @@ int main()
         hub(jogador1,&posicao);
 
         // CARLOS MODIFICAÇÃO
-        graphic(1, muro, jogador1->posicao, jogador2->posicao, velocInicial * cos(angulo), velocInicial * sin(angulo));
+        graphic(1, muro, jogador1->posicao, jogador2->posicao,(double) velocInicial * cos(PI) , (double) velocInicial * sinf(angulo * 3.14/180));
         // CARLOS MODIFICAÇÃO
 
         // VERIFICAR SE BATEU NO MURO!!!!!!!!!
