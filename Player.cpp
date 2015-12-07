@@ -14,13 +14,18 @@ int graphic(short esquerda ,int tamanho_muro, int pos_1, int pos_2, int vel_x, i
     int t, y, x;
     initgraph(&gd, &gm, "C:\\TC\\BGI");
 
+    // --- O tamanho total da tela é = 640, 480
+
 // CONSTRUÇÃO DO TÉRREO
     line(0, 400, 640, 400);
 
 // CONSTRUÇÃO DO MURO
     line(320, 480 - tamanho_muro, 320, 480);
+    // --- A posição do muro em x é = 320
 
 // INSERÇÃO DOS CANHÕES
+    outtextxy(25,10,"Jogador 1");
+    outtextxy(345,10,"Jogador 2");
 
 // TRAJETÓRIA
     int i;

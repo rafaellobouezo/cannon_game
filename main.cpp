@@ -49,6 +49,8 @@ int main()
         graphic(1, muro, jogador1->posicao, jogador2->posicao, velocInicial * cos(angulo), velocInicial * sin(angulo));
         // CARLOS MODIFICAÇÃO
 
+        // VERIFICAR SE BATEU NO MURO!!!!!!!!!
+
         if(verifDeAcerto(jogador2,jogador1,&posicao)){
             printf("\n\n JOGADOR 1 VENCEU !");
             break;
