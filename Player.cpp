@@ -28,16 +28,18 @@ int graphic(short esquerda ,int tamanho_muro, int pos_1, int pos_2, int vel_x, i
     // --- A posição do muro em x é = 320
 
 // INSERÇÃO DOS CANHÕES
-    outtextxy(25,10,"Jogador 1");
-    circle(pos_1, 390, 10);
-    line(pos_1, 380, pos_1 + 30, 380);
-    line(pos_1 + 3, 403, pos_1 + 5, 405);
+    outtextxy(25, 10, "Jogador 1");
+    circle(pos_1, 392, 8);
+    line(pos_1, 384, pos_1 + 20, 380);
+    line(pos_1 + 8, 392, pos_1 + 20, 388);
+    line(pos_1 + 20, 380, pos_1 + 20, 388);
 
 
-    outtextxy(345,10,"Jogador 2");
-    circle(pos_2, 390, 10);
-    line(pos_2, 403, pos_2 + 5, 405);
-    line(pos_2 + 3, 403, pos_2 + 5, 405);
+    outtextxy(345, 10, "Jogador 2");
+    circle(pos_2, 392, 8);
+    line(pos_2, 384, pos_2 - 20, 380);
+    line(pos_2 - 8, 392, pos_2 - 20, 388);
+    line(pos_2 - 20, 380, pos_2 - 20, 388);
 
 // TRAJETÓRIA
     int i;
