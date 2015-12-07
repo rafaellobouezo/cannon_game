@@ -14,6 +14,10 @@ int graphic(short esquerda ,int tamanho_muro, int pos_1, int pos_2, int vel_x, i
     int t, y, x;
     initgraph(&gd, &gm, "C:\\TC\\BGI");
 
+// ALTERAÇÃO DOS VALORES PARA A ESCALA DA JANELA
+    pos_1 *= 6,4;
+    pos_2 *= 6,4;
+
     // --- O tamanho total da tela é = 640, 480
 
 // CONSTRUÇÃO DO TÉRREO
@@ -25,7 +29,15 @@ int graphic(short esquerda ,int tamanho_muro, int pos_1, int pos_2, int vel_x, i
 
 // INSERÇÃO DOS CANHÕES
     outtextxy(25,10,"Jogador 1");
+    circle(pos_1, 390, 10);
+    line(pos_1, 380, pos_1 + 30, 380);
+    line(pos_1 + 3, 403, pos_1 + 5, 405);
+
+
     outtextxy(345,10,"Jogador 2");
+    circle(pos_2, 390, 10);
+    line(pos_2, 403, pos_2 + 5, 405);
+    line(pos_2 + 3, 403, pos_2 + 5, 405);
 
 // TRAJETÓRIA
     int i;
