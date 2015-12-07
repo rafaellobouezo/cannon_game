@@ -11,41 +11,49 @@
 
 int graphic(short esquerda ,int tamanho_muro, int pos_1, int pos_2, int vel_x, int vel_y){
     int gd = DETECT, gm;
-    int t, y, x;
     initgraph(&gd, &gm, "C:\\TC\\BGI");
 
 // ALTERAÇÃO DOS VALORES PARA A ESCALA DA JANELA
     pos_1 *= 6,4;
     pos_2 *= 6,4;
 
-    // --- O tamanho total da tela é = 640, 480
+    /**
+    * O tamanho total da tela é = 640, 480
+    * A posição do muro em x é = 320
+    **/
 
 // CONSTRUÇÃO DO TÉRREO
     line(0, 400, 640, 400);
 
 // CONSTRUÇÃO DO MURO
     line(320, 480 - tamanho_muro, 320, 480);
-    // --- A posição do muro em x é = 320
 
 // INSERÇÃO DOS CANHÕES
-    outtextxy(25, 10, "Jogador 1");
+    outtextxy(25, 10, "Jogador Atacante");
     circle(pos_1, 392, 8);
     line(pos_1, 384, pos_1 + 20, 380);
     line(pos_1 + 8, 392, pos_1 + 20, 388);
     line(pos_1 + 20, 380, pos_1 + 20, 388);
 
-
-    outtextxy(345, 10, "Jogador 2");
+    outtextxy(345, 10, "Jogador Defensor");
     circle(pos_2, 392, 8);
     line(pos_2, 384, pos_2 - 20, 380);
     line(pos_2 - 8, 392, pos_2 - 20, 388);
     line(pos_2 - 20, 380, pos_2 - 20, 388);
 
 // TRAJETÓRIA
-    int i;
-    for(t = 0; t < 300; x++){
-        usleep(200);
-        putpixel(y, x, RED);
+    int t, y, x = 0, i;
+    for(t = 0; t < 9999; t++){
+        usleep(100);
+        x = pos_1 + vel_x * t;
+            y = 400 + vel_y * t + 10 * t / 2;
+
+            setcolor(RED);
+            line(x, y, x + 5, y - 5);
+
+            if(x > 401){
+                break;
+            }
     }
 
     getch();
@@ -55,12 +63,12 @@ int graphic(short esquerda ,int tamanho_muro, int pos_1, int pos_2, int vel_x, i
 
 void gerarPosicao(Player *jogador,int x){
 
-    /* x deve ser 0 ou 1, sendo 0 ele determina uma posição
-    uma posição qualquer que varia de 0 a 50 metros.
+    /**
+    * x deve ser 0 ou 1, sendo 0 ele determina uma posição
+    * uma posição qualquer que varia de 0 a 50 metros.
 
-    sendo 1 ele determina uma posição
-    uma posição qualquer que varia de 50 a 100 metros.
-
+    * sendo 1 ele determina uma posição
+    * uma posição qualquer que varia de 50 a 100 metros.
     */
 
     int posicao;
