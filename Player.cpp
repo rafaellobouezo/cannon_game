@@ -44,29 +44,25 @@ int graphic(short esquerda ,int tamanho_muro, int pos_1, int pos_2, float vel_x,
     line(pos_2 - 20, 380, pos_2 - 20, 388);
 
 // TRAJETÓRIA
-    int t, y = 400, x = pos_1, g;
+    int ponto = 400, y = 400, x = pos_1, cont;
     y = 400 - vel_y;
-    setcolor(RED);
+    setcolor(GREEN);
 
-
-    circle(300, 175, 2);
-    for(x=0;x<1000;x++)
+    for(cont = 0; ; cont++)
     {
-        usleep(100);
-        y=f(x, vel_x);
-        putpixel(x+ pos_1, 400-y,GREEN);
-        putpixel(x+ pos_1, 400+y,GREEN);
+        usleep(60000);
+
+        circle(cont*vel_x + pos_1, ponto, 2);
+        ponto = ponto -vel_y + cont*10;
+        if (ponto > 400){
+            outtextxy(350, 420, "Finish!");
+            break;
+        }
     }
 
     getch();
     closegraph();
     return 0;
-}
-
-float f(int x, float v)
-{
-    return 5 * x * x + v * x + 0;
-    //return 2*sqrt(4*x);
 }
 
 void gerarPosicao(Player *jogador,int x){

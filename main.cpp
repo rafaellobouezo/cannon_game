@@ -43,11 +43,13 @@ int main()
         scanf("%i",&angulo);
         printf("\nDigite a Velocidade Inicial: ");
         scanf("%f",&velocInicial);
+    // ENTRAR COM AS VELOCIDADES
+        int vel_x, vel_y;
         posicao = atirar(angulo,&velocInicial,jogador1);
         hub(jogador1,&posicao);
 
         // CARLOS MODIFICAÇÃO
-        graphic(1, muro, jogador1->posicao, jogador2->posicao,(double) velocInicial * cos(PI) , (double) velocInicial * sinf(angulo * 3.14/180));
+        graphic(1, muro, jogador1->posicao, jogador2->posicao, velocInicial * cos( angulo * PI / 180) , velocInicial * sin( angulo * PI / 180));
         // CARLOS MODIFICAÇÃO
 
         // VERIFICAR SE BATEU NO MURO!!!!!!!!!
