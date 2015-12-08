@@ -55,12 +55,15 @@ int graphic(short esquerda ,int tamanho_muro, int pos_1, int pos_2, float vel_x,
         circle(cont*vel_x + pos_1, ponto, 2);
         ponto = ponto -vel_y + cont*10;
         if (ponto > 400){
-            outtextxy(350, 420, "Finish!");
             break;
         }
     }
-
-    getch();
+    for(cont = 5; cont > 0; cont--){
+        char message[26];
+        sprintf(message, "Fechando janela em ... %d", cont);
+        outtextxy(350, 420, message);
+        sleep(1);
+    }
     closegraph();
     return 0;
 }

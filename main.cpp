@@ -11,9 +11,10 @@
 
     DATA: 10/11/2015
 
-    ALUNOS :    RAFAEL ANDERSON LOBO DA SILVA, UEZO: 1423331065
-                CARLOS ALBERTO COSTA DE OLIVEIRA JÚNIOR, UEZO: 1423331068
-                IGOR GONÇALVEZ SILVA, UEZO: 142333
+    ALUNOS :    CARLOS ALBERTO COSTA DE OLIVEIRA JÚNIOR, MATRICULA: 1423331068
+                JEOSAFÁ MOREIRA, MATRICULA: 1423331074
+                DIEGO BATISTA MACHADO, MATRICULA: 1423331058
+
 
             EQUAÇÃO QUE REGE ESTE PROGRAMA:
 
@@ -72,7 +73,7 @@ int main()
         hub(jogador2,&posicao);
 
         // CARLOS MODIFICAÇÃO
-        graphic(0, muro, jogador1->posicao, jogador2->posicao, velocInicial * cos(angulo), velocInicial * sin(angulo));
+        graphic(0, muro, jogador2->posicao, jogador1->posicao, velocInicial * cos( angulo * PI / 180) , velocInicial * sin( angulo * PI / 180));
         // CARLOS MODIFICAÇÃO
 
         if(verifDeAcerto(jogador1,jogador2,&posicao)){
