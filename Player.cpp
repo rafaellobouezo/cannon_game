@@ -16,8 +16,8 @@ int graphic(short esquerda ,int tamanho_muro, int pos_1, int pos_2, float vel_x,
     initgraph(&gd, &gm, "C:\\TC\\BGI");
 
 // ALTERAÇÃO DOS VALORES PARA A ESCALA DA JANELA
-    pos_1 *= 6,4;
-    pos_2 *= 6,4;
+    //pos_1 *= 6,4;
+    //pos_2 *= 6,4;
 
     /**
     * O tamanho total da tela é = 640, 480
@@ -31,13 +31,13 @@ int graphic(short esquerda ,int tamanho_muro, int pos_1, int pos_2, float vel_x,
     line(320, 480 - tamanho_muro, 320, 480);
 
 // INSERÇÃO DOS CANHÕES
-    outtextxy(25, 10, "Jogador Atacante");
+    outtextxy(25, 10, "Jogador 1");
     circle(pos_1, 392, 8);
     line(pos_1, 384, pos_1 + 20, 380);
     line(pos_1 + 8, 392, pos_1 + 20, 388);
     line(pos_1 + 20, 380, pos_1 + 20, 388);
 
-    outtextxy(345, 10, "Jogador Defensor");
+    outtextxy(345, 10, "Jogador 2");
     circle(pos_2, 392, 8);
     line(pos_2, 384, pos_2 - 20, 380);
     line(pos_2 - 8, 392, pos_2 - 20, 388);
@@ -53,12 +53,12 @@ int graphic(short esquerda ,int tamanho_muro, int pos_1, int pos_2, float vel_x,
         usleep(60000);
 
         circle(cont*vel_x + pos_1, ponto, 2);
-        ponto = ponto -vel_y + cont*10;
+        ponto = ponto -vel_y + cont*9.8;
         if (ponto > 400){
             break;
         }
     }
-    for(cont = 5; cont > 0; cont--){
+    for(cont = 3; cont > 0; cont--){
         char message[26];
         sprintf(message, "Fechando janela em ... %d", cont);
         outtextxy(350, 420, message);
@@ -80,10 +80,10 @@ void gerarPosicao(Player *jogador,int x){
 
     int posicao;
     srand(time(NULL));
-    posicao = rand()%50 + 50*x;
-    jogador->limiteEsq= posicao -3;
+    posicao = rand()%320 + 320*x;
+    jogador->limiteEsq= posicao -8;
     jogador->posicao= posicao;
-    jogador->limiteDir= posicao +3;
+    jogador->limiteDir= posicao +8;
     jogador->lastAngulo=0;
     jogador->lastVeloc=0.0;
 
@@ -91,29 +91,27 @@ void gerarPosicao(Player *jogador,int x){
 
 float atirar(int teta,float *velocInic,Player* atirador){
 
-    /*
-        Esta função recebe o angulo teta (inteiro) e a velocidade Inicial (velocInic)
-        e calcula a distância que a "bala" é lançada.
+    /**
+     *   Esta função recebe o angulo teta (inteiro) e a velocidade Inicial (velocInic)
+     *   e calcula a distância que a "bala" é lançada.
 
-        funções sen e cos recebem como parâmetro angulos em radianos, logo é necessário
-        fazer a conversão. A variável "rads" recebe o valor resultante da conversão de graus
-        para radianos.
+     *   funções sen e cos recebem como parâmetro angulos em radianos, logo é necessário
+     *   fazer a conversão. A variável "rads" recebe o valor resultante da conversão de graus
+     *   para radianos.
 
-        Força da Gravidade = 9,8
+     *   Força da Gravidade = 9,8
 
-        Unidades:
-        Velocidade Inicial : m/s ( metros por segundo)
-        Ângulo : ° ( graus)
-        Gravidade: m/s² (metros por segundo ao quadrado)
-        Deslocamento : m ( metros)
-
+     *   Unidades:
+     *   Velocidade Inicial : m/s ( metros por segundo)
+     *   Ângulo : ° ( graus)
+     *   Gravidade: m/s² (metros por segundo ao quadrado)
+     *   Deslocamento : m ( metros)
 
         --
 
-        Essa função recebe o endereço do atirador apenas para armazenar alguns dados
-        em seus atributos, como last angulo e last veloc;
-
-    */
+     *   Essa função recebe o endereço do atirador apenas para armazenar alguns dados
+     *   em seus atributos, como last angulo e last veloc;
+     */
 
     //Calculo do deslocamento do tiro no eixo X;
     float seno,cosseno,rads,deslocamento;
@@ -132,27 +130,24 @@ float atirar(int teta,float *velocInic,Player* atirador){
 
 void hub(Player* jogador,float *alcanceTiro){
     printf("\n--->> SEU TIRO PERCORREU %.2f METROS;",*alcanceTiro);
-    printf("\n--->> POSICAO DO JOGADOR: %i <- %i -> %i",jogador->limiteEsq,jogador->posicao,jogador->limiteDir);
+    printf("\n--->> POSICAO DO JOGADOR QUE ATIROU: %i <- %i -> %i",jogador->limiteEsq,jogador->posicao,jogador->limiteDir);
     printf("\n--->> ULTIMO ANGULO: %i",jogador->lastAngulo);
     printf("\n--->> ULTIMA VELOCIDADE: %.2f",jogador->lastVeloc);
-    printf("\n[ VER ANIMAÇÃO - PRESSIONE ENTER ] ");
+
     fflush(stdin);
     getchar();
-    fflush(stdin);
 }
+
+
 int verifDeAcerto(Player* vitima,Player* atirador,float *posicaoTiro){
     float tiro;
-    /*
-        -> VITIMA recebe o endereço de estrutura do jogador que está sendo o alvo.
-        ( Quem irá levar "chumbo grosso" )
-
-        -> ATIRADOR: nem precisa explicar;
-
-        -> posicaoTiro recebe por referencia o alcance do tiro.
-
-
-    */
-    if(atirador->posicao >= 50 && atirador->posicao <= 100){
+    /**
+     *   -> VITIMA recebe o endereço de estrutura do jogador que está sendo o alvo.
+     *   ( Quem irá levar "chumbo grosso" )
+     *   -> ATIRADOR: nem precisa explicar;
+     *   -> posicaoTiro recebe por referencia o alcance do tiro.
+     */
+    if(atirador->posicao >= 320 && atirador->posicao <= 320){
         tiro= atirador->posicao - *posicaoTiro ;
         return ( tiro  >= vitima->limiteEsq)&& (tiro <= vitima->limiteDir) ;
     }else{
@@ -162,6 +157,5 @@ int verifDeAcerto(Player* vitima,Player* atirador,float *posicaoTiro){
 }
 int definirTamanhoMuro(){
     int tam = rand() % LIM_MAX_MURO + 180;
-    printf("Tamanho do muro: %d", tam);
     return tam;
 }

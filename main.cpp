@@ -14,7 +14,7 @@
     ALUNOS :    CARLOS ALBERTO COSTA DE OLIVEIRA JÚNIOR, MATRICULA: 1423331068
                 JEOSAFÁ MOREIRA, MATRICULA: 1423331074
                 DIEGO BATISTA MACHADO, MATRICULA: 1423331058
-
+                AMANDA SENA, MATRICULA: 1424441056
 
             EQUAÇÃO QUE REGE ESTE PROGRAMA:
 
@@ -38,29 +38,29 @@ int main()
     gerarPosicao(jogador1,0);
     gerarPosicao(jogador2,1);
     int muro = definirTamanhoMuro();
+    printf("\n --- CANNON GAME: ");
+    printf("\n - Os jogadores tentam atirar de um lado para outro tentando acertar o inimigo. \n - O tamanho da tela e 640 (x) por 480 (y) \n - O tamanho de um jogador e 16 na horizontal \n - O Tamanho do muro: %d", muro);
 
     while(1){
         printf("\n\n\nVEZ DA PARTIDA: JOGADOR 1 \n\n\n \nDigite um angulo: ");
         scanf("%i",&angulo);
         printf("\nDigite a Velocidade Inicial: ");
         scanf("%f",&velocInicial);
-    // ENTRAR COM AS VELOCIDADES
-        int vel_x, vel_y;
         posicao = atirar(angulo,&velocInicial,jogador1);
         hub(jogador1,&posicao);
 
-        // CARLOS MODIFICAÇÃO
         graphic(1, muro, jogador1->posicao, jogador2->posicao, velocInicial * cos( angulo * PI / 180) , velocInicial * sin( angulo * PI / 180));
-        // CARLOS MODIFICAÇÃO
 
         // VERIFICAR SE BATEU NO MURO!!!!!!!!!
 
         if(verifDeAcerto(jogador2,jogador1,&posicao)){
             printf("\n\n JOGADOR 1 VENCEU !");
+            getchar();
             break;
         }
         printf("\n [JOGADOR 1 ERROU O TIRO !!!]");
-        _sleep(3);
+
+        getchar();
         system("cls");
         fflush(stdin);
 
@@ -72,16 +72,17 @@ int main()
         posicao = atirar(angulo,&velocInicial,jogador2);
         hub(jogador2,&posicao);
 
-        // CARLOS MODIFICAÇÃO
         graphic(0, muro, jogador2->posicao, jogador1->posicao, velocInicial * cos( angulo * PI / 180) , velocInicial * sin( angulo * PI / 180));
-        // CARLOS MODIFICAÇÃO
+
+        // VERIFICAR SE BATEU NO MURO!!!!!!!!!
 
         if(verifDeAcerto(jogador1,jogador2,&posicao)){
             printf("\n\n JOGADOR 2 VENCEU !");
+            getchar();
             break;
         }
         printf("\n [JOGADOR 2 ERROU O TIRO !!!]");
-        _sleep(3);
+        getchar();
         system("cls");
         fflush(stdin);
     }
